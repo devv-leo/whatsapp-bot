@@ -1,2 +1,2 @@
 # whatsapp-bot
-Gemini API Powered WhatsApp Bot
+WhatsApp Bot integrated with Google's Gemini AI model
