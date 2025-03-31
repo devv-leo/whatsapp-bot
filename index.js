@@ -73,7 +73,7 @@ client.on('message', async message => {
     // Detailed error logging
     console.error('Error message:', error.message);
     
-    await message.reply('Cannot process your message, please resend in few minutes');
+    await message.reply('Cannot process your message. Please resend in few minutes.');
   }
 })
 
