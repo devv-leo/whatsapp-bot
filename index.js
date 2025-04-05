@@ -4,16 +4,21 @@ const {
   GoogleGenerativeAI,
   HarmCategory,
   HarmBlockThreshold,
-} = require("@google/generative-ai");const { Client } = require('whatsapp-web.js')
+} = require("@google/generative-ai");
+
+const { Client } = require('whatsapp-web.js')
+
 const qrcode = require('qrcode-terminal')
 
-const client = new Client({
-  webVersionCache: {
-    type: "remote",
-    remotePath:
-      "https://raw.githubusercontent.com/wppconnect-team/wa-version/main/html/2.2412.54.html",
-  },
-})
+const client = new Client(
+//   {
+//   webVersionCache: {
+//     type: "remote",
+//     remotePath:
+//       "https://github.com/wppconnect-team/wa-version/blob/main/html/2.3000.1020350206-alpha.html",
+//   },
+// }
+)
 
 client.on('qr', qr => {
   qrcode.generate(qr, {small: true})
@@ -73,7 +78,7 @@ client.on('message', async message => {
     // Detailed error logging
     console.error('Error message:', error.message);
     
-    await message.reply('Cannot process your message, please resend in few minutes');
+    await message.reply('Cannot process your message. Please resend in few minutes.');
   }
 })
 

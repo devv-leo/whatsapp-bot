@@ -1,8 +1,9 @@
+.env
 # Dependencies
 node_modules/
 
 # WhatsApp session data
 .wwebjs_auth/
 
-# Logs
-*.log
+# WhatsApp cache data
+.wwebjs_cache/
