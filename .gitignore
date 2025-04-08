@@ -7,3 +7,5 @@ node_modules/
 
 # WhatsApp cache data
 .wwebjs_cache/
+
+package-lock.json
