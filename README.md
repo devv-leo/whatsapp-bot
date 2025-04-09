@@ -52,10 +52,18 @@ Ensure you have the following installed:
    >> Bot is Ready! <<
    ```
 
+## Features
+
+- **Chat History**: The bot maintains conversation history for each user
+- **Private Chat Only**: Bot only responds to private messages, not group chats
+- **Error Handling**: Graceful error handling with user-friendly messages
+- **Automatic Session Management**: Uses local authentication to maintain sessions
+- **Chat History Limit**: Maintains last 20 messages per user to optimize performance
+
 ## Commands
 
-- **Chat with AI:** Send any message, and the bot will respond using the Gemini AI model.
-- **Stop the bot:** Press `Ctrl + C` in the terminal.
+- **Chat with AI:** Send any message, and the bot will respond using the Gemini 1.5 Flash model
+- **Stop the bot:** Press `Ctrl + C` in the terminal
 
 ## Troubleshooting
 
@@ -64,15 +72,15 @@ Ensure you have the following installed:
   npm install whatsapp-web.js
   ```
 - If the bot does not respond:
-  - Ensure the API key is correct.
-  - Restart the bot with `node index.js`.
+  - Ensure the API key is correct
+  - Restart the bot with `node index.js`
 - If you get **"Invalid API Key"**:
-  - Double-check your key in `.env`.
-  - Ensure your API key is active in **Google AI Studio**.
+  - Double-check your key in `.env`
+  - Ensure your API key is active in **Google AI Studio**
 
 ## License
 This project is open-source under the **MIT License**.
 
 ---
 
-This README provides all necessary setup steps, API key retrieval, and usage instructions for your WhatsApp bot. Let me know if you need any modifications! 🚀
+Feel free to contribute to this project by submitting issues or pull requests! 🚀
