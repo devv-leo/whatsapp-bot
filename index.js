@@ -13,7 +13,7 @@ const { Client, LocalAuth } = require('whatsapp-web.js');
 const qrcode = require('qrcode-terminal');
 
 // Configuration constants
-const MODEL_NAME = "gemini-1.5-flash";
+const MODEL_NAME = "gemini-2.0-flash";
 const API_KEY = process.env.API_KEY;
 const SESSION_DATA_PATH = path.join(__dirname, '.wwebjs_auth');
 const CHAT_HISTORY_PATH = path.join(__dirname, 'chat_histories.json');
@@ -49,6 +49,20 @@ function saveChatHistories() {
 client.on('qr', qr => {
     console.log('Scan this QR code with your WhatsApp:');
     qrcode.generate(qr, { small: true });
+});
+
+// Handle authentication failures
+client.on('auth_failure', async (msg) => {
+    console.log('Authentication failed:', msg);
+    console.log('Clearing auth data and restarting...');
+    
+    // Delete auth folder
+    if (fs.existsSync(SESSION_DATA_PATH)) {
+        fs.rmSync(SESSION_DATA_PATH, { recursive: true, force: true });
+    }
+    
+    // Restart the client
+    await client.initialize();
 });
 
 // Handle client ready event
@@ -118,7 +132,7 @@ client.on('message', async message => {
 
 // Handle client disconnection
 client.on('disconnected', (reason) => {
-    console.log('Client was logged out:', reason);
+    console.log('Client was logged out: ', reason);
 });
 
 // Initialize the WhatsApp client

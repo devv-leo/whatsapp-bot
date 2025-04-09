@@ -13,8 +13,8 @@ Ensure you have the following installed:
 
 1. **Clone the repository** (or download the source files):
    ```sh
-   git clone https://github.com/your-repo/whatsapp-gemini-bot.git
-   cd whatsapp-gemini-bot
+   git clone https://github.com/devv-leo/whatsapp-bot.git
+   cd whatsapp-bot
    ```
 
 2. **Install dependencies**:
