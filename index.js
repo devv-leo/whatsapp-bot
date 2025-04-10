@@ -18,7 +18,7 @@ const API_KEY = process.env.API_KEY;
 const SESSION_DATA_PATH = path.join(__dirname, '.wwebjs_auth');
 const CHAT_HISTORY_PATH = path.join(__dirname, 'chat_histories.json');
 
-// Create session directory if it doesn't exist
+// Checks if chat_histories.json exists. Create session directory if it doesn't exist
 if (!fs.existsSync(SESSION_DATA_PATH)) {
     fs.mkdirSync(SESSION_DATA_PATH);
 }

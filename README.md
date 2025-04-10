@@ -2,12 +2,36 @@
 
 This is a **Node.js-based WhatsApp bot** that integrates with **Google's Gemini AI** for generating responses. The bot uses the **whatsapp-web.js** library to interact with WhatsApp and the **Google Generative AI SDK** to process and generate text responses.
 
-## Requirements
-Ensure you have the following installed:
-- [Node.js](https://nodejs.org/) (v16 or later)
-- [npm](https://www.npmjs.com/)
-- [Google AI Studio API Key](https://ai.google.dev/)
-- A WhatsApp account logged into **WhatsApp Web**
+## Prerequisites  
+
+Before you proceed, make sure you have the following installed:  
+
+### 1. Check if Node.js is installed  
+Run: 
+```sh
+node -v
+```  
+You should see something like:  
+```
+v18.x.x
+```  
+If Node.js is not installed or the version is lower than **18**, install it from [nodejs.org](https://nodejs.org/).  
+
+### 2. Check if npm is installed  
+Run:  
+```sh
+npm -v
+```  
+If npm is not installed, install it by downloading [Node.js](https://nodejs.org/) (npm comes bundled with it).  
+
+### 3. Check if git is installed  
+Run:  
+```sh
+git -v
+```  
+If git is not installed, install it by downloading [Git](https://git-scm.com/downloads).
+
+### 4. You'll need a WhatsApp account on your phone
 
 ## Installation
 
@@ -37,7 +61,7 @@ Ensure you have the following installed:
 4. Click **Generate API Key**.
 5. Copy the key and paste it into the `.env` file as shown above.
 
-## Usage
+## Running the Bot
 
 1. Start the bot by running:
    ```sh
