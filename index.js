@@ -51,20 +51,6 @@ client.on('qr', qr => {
     qrcode.generate(qr, { small: true });
 });
 
-// Handle authentication failures
-client.on('auth_failure', async (msg) => {
-    console.log('Authentication failed:', msg);
-    console.log('Clearing auth data and restarting...');
-    
-    // Delete auth folder
-    if (fs.existsSync(SESSION_DATA_PATH)) {
-        fs.rmSync(SESSION_DATA_PATH, { recursive: true, force: true });
-    }
-    
-    // Restart the client
-    await client.initialize();
-});
-
 // Handle client ready event
 client.on('ready', () => {
     console.log('>> Bot is Ready! <<');
